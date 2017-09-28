@@ -1,0 +1,75 @@
+{
+	"hints": [],
+	"groups": [
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties",
+			"name": "",
+			"type": "com.metafour.multitenancy.impl.TenantProperties"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.config.MultitenancyProperties",
+			"name": "",
+			"type": "com.metafour.multitenancy.config.MultitenancyProperties"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties",
+			"name": "datasource",
+			"sourceMethod": "public com.metafour.multitenancy.impl.TenantProperties.TenantDataSource getDatasource() ",
+			"type": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource"
+		}
+	],
+	"properties": [
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties",
+			"name": "name",
+			"type": "java.lang.String",
+			"description": "Tenant name (optional)"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties",
+			"name": "active",
+			"type": "java.lang.Boolean",
+			"description": "Mark tenant configuration as active or not"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource",
+			"name": "datasource.driver-class-name",
+			"description": "Fully qualified name of the JDBC driver, Auto-detected based on the URL by default",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource",
+			"name": "datasource.name",
+			"description": "Name of the datasource",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource",
+			"name": "datasource.username",
+			"description": "Login user of the database",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource",
+			"name": "datasource.password",
+			"description": "Login password of the database",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties$TenantDataSource",
+			"name": "datasource.url",
+			"description": "JDBC URL of the database; e.g. <code>jdbc:postgresql:\/\/localhost:5432\/tenant_2<\/code>",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.impl.TenantProperties",
+			"name": "sender-email",
+			"type": "java.lang.String"
+		},
+		{
+			"sourceType": "com.metafour.multitenancy.config.MultitenancyProperties",
+			"name": "tenants",
+			"type": "java.util.Map<java.lang.String,com.metafour.multitenancy.impl.TenantProperties>"
+		}
+	]
+}
