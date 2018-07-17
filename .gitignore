@@ -1,4 +1,5 @@
 *.properties
+!messages*.properties
 !*-sample.properties
 *.yml
 !*-sample.yml
@@ -22,6 +23,7 @@ dist/
 build/
 log/
 target/
+test-output
 
 # https://raw.githubusercontent.com/github/gitignore/master/Maven.gitignore
 pom.xml.tag
@@ -33,6 +35,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 !.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
 
 # https://raw.githubusercontent.com/github/gitignore/master/Gradle.gitignore
 .gradle
@@ -45,6 +48,8 @@ gradle-app.setting
 .project
 .settings
 .springBeans
+*.launch
+tmp/
 .factorypath
 .apt_generated
 .checkstyle
@@ -54,6 +59,10 @@ gradle-app.setting
 *.iml
 *.iws
 *.ipr
+.out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
 .tern-project
 
 # NetBeans
@@ -66,6 +75,8 @@ nbdist/
 
 # OS-specific
 *.swp
+*.bak
+*.tmp
 *~
 .DS_Store
 Thumbs.db

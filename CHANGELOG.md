@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
-## [0.1.1] - 2017-09-27
+## [0.1.1] - 2018-07-17
 ### Added
+- missing maven-wrapper.properties
 - Blank project structure
+### Changed
+- Maven plugins and lombok version bumped
 
 
 ## [version] - 2017-06-20
