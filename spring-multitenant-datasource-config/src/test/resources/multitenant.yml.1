@@ -1,0 +1,42 @@
+tenants:
+  default:
+    name: Default tenant (placeholder)
+    active: true
+    senderEmail: noreply@example.com
+    datasource:
+      url: jdbc:postgresql://localhost:5432/tenant_1
+      username: username
+      password: password
+      driver-class-name: org.postgresql.Driver
+
+  tenant1:
+    name: Test tenant 1
+    active: true
+    senderEmail: noreply.tenant1@example.com
+    datasource:
+      name: Tenant DB 1
+      url: jdbc:postgresql://localhost:5432/tenant_1
+      username: username
+      password: password
+      driver-class-name: org.postgresql.Driver
+
+  tenant2:
+    name: Test tenant 2
+    active: true
+    senderEmail: noreply.tenant2@example.com
+    datasource:
+      name: Tenant DB 2
+      url: jdbc:postgresql://localhost:5432/tenant_2
+      username: username
+      password: password
+      driver-class-name: org.postgresql.Driver
+
+  tenant3:
+    name: Test tenant 3
+    senderEmail: noreply.tenant3@example.com
+    datasource:
+      name: Tenant DB 3
+      url: jdbc:postgresql://localhost:5432/tenant_3
+      username: username
+      password: password
+      driver-class-name: org.postgresql.Driver

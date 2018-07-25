@@ -25,7 +25,8 @@ public class TenantContextHolderTest extends TenantContextHolder {
 
 	@Test
 	public void testGetCurrentTenant() {
-		assertNull(TenantContextHolder.getCurrentTenant());
+		assertEquals(holder.getTenant(), DEFAULT_ID);
+		//assertNull(TenantContextHolder.getCurrentTenant());
 		TenantContextHolder.setCurrentTenant(DEFAULT_ID);
 		assertEquals(DEFAULT_ID, TenantContextHolder.getCurrentTenant());
 	}
@@ -38,7 +39,8 @@ public class TenantContextHolderTest extends TenantContextHolder {
 
 	@Test
 	public void testGetScopeContext() {
-		assertNull(holder.getScopeContext());
+		assertEquals(holder.getTenant(), DEFAULT_ID);
+		//assertNull(holder.getScopeContext());
 		TenantContextHolder.setCurrentTenant(TENANT_ID);
 		assertTrue(holder.getScopeContext() instanceof Object);
 		assertSame(String.class, holder.getScopeContext().getClass());
@@ -47,7 +49,8 @@ public class TenantContextHolderTest extends TenantContextHolder {
 	@Test
 	public void testClearCurrentTenant() {
 		TenantContextHolder.clearCurrentTenant();
-		assertNull(TenantContextHolder.getCurrentTenant());
+		//assertNull(TenantContextHolder.getCurrentTenant());
+		assertEquals(holder.getTenant(), DEFAULT_ID);
 	}
 
 }

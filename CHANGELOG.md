@@ -7,10 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.3] - 2018-07-25
+### Added
+- TenantLookupFailureException in multitenancy-context for future use
+- multitenant sample property and YML files in datasource config test
+
+### Changed
+- Upgraded maven wrapper to v3.5.4
+- Project version (revision) is now available as variable and supported by Maven 3.5.0+
+- TenantContextHolder changes: getCurrentTenantId and clearCurrentTenant
+- SpringProfileDocumentMatcher not needed in YamlPropertySourceFactory
+
 ## [0.1.1] - 2018-07-17
 ### Added
 - missing maven-wrapper.properties
 - Blank project structure
+
 ### Changed
 - Maven plugins and lombok version bumped
 

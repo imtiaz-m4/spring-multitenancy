@@ -14,3 +14,4 @@ Application developed following the [article](http://anakiou.blogspot.com/2015/0
 - Lombok annotated bean
 
 ## TODO
+- Change to different namespace for packages to simulate real-world scenario

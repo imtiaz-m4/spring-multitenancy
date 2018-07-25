@@ -3,7 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.metafour</groupId>
 	<artifactId>spring-multitenancy</artifactId>
-	<version>0.1.1</version>
+	<!-- https://www.igorkromin.net/index.php/2017/06/16/multi-module-builds-with-maven-35-and-the-parent-child-pom-version-management -->
+	<version>${revision}</version>
 	<packaging>pom</packaging>
 
 	<name>spring-multitenancy</name>
@@ -18,9 +19,10 @@
 		<module>multitenancy-demo-boot-parent</module>
 	</modules>
 	<properties>
-		<java.version>1.8</java.version>
+		<revision>0.1.3-SNAPSHOT</revision>
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<spring-boot.version>1.4.7.RELEASE</spring-boot.version>
+		<java.version>1.8</java.version>
 		<skipTests>false</skipTests>
 		<skipDeploy>false</skipDeploy>
 		<git.host>github.com</git.host>
@@ -119,6 +121,28 @@
 				<configuration>
 					<skip>${skipDeploy}</skip>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M2</version>
+				<executions>
+					<execution>
+						<id>enforce-versions</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>[3.5.0,)</version>
+									<message>Use of revision property requires maven 3.5.0-beta1</message>
+								</requireMavenVersion>
+								<requireJavaVersion><version>${java.version}</version></requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

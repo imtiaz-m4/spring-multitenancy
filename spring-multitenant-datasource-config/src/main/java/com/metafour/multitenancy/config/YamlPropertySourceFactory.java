@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
-import org.springframework.boot.yaml.SpringProfileDocumentMatcher;
+//import org.springframework.boot.yaml.SpringProfileDocumentMatcher;
 import org.springframework.core.env.PropertiesPropertySource;
 import org.springframework.core.env.PropertySource;
 import org.springframework.core.io.support.EncodedResource;
@@ -29,7 +29,7 @@ public class YamlPropertySourceFactory implements PropertySourceFactory {
 
 		YamlPropertiesFactoryBean factory = new YamlPropertiesFactoryBean();
 		factory.setMatchDefault(true);
-		factory.setDocumentMatchers(new SpringProfileDocumentMatcher());
+		//factory.setDocumentMatchers(new SpringProfileDocumentMatcher());
 		factory.setResources(resource.getResource());
 		factory.afterPropertiesSet();
 

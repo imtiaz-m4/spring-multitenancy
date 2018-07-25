@@ -43,6 +43,10 @@ public class TenantContextHolder {
 		return currentTenant.get();
 	}
 
+	public static String getCurrentTenantId() {
+		return getCurrentTenant().toString();
+	}
+
 	/**
 	 * Returns current tenant identifier.
 	 * 
@@ -61,9 +65,9 @@ public class TenantContextHolder {
 		return currentTenant.get();
 	}
 
-	/** Removes the tenant context */
+	/** Removes the ThredLocaMap from the current tenant (ThreadLocal) */
 	public static void clearCurrentTenant() {
-		currentTenant.set(null);
+		currentTenant.remove();
 	}
 
 }
