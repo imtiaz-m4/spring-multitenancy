@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.scheduling;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -12,9 +12,10 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.metafour.multitenancy.bean.Employee;
-import com.metafour.multitenancy.bean.EmployeeRepository;
+import com.metafour.multitenancy.TenantContextHolder;
 import com.metafour.multitenancy.config.MultitenancyProperties;
+import com.metafour.multitenancy.demo.scheduling.bean.Employee;
+import com.metafour.multitenancy.demo.scheduling.bean.EmployeeRepository;
 
 @Component
 public class ScheduledTasks {

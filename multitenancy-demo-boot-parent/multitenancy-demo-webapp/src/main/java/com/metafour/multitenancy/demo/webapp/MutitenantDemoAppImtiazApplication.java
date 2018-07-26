@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.webapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Imtiaz Rahi
  * @since 2017-08-25
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = { "com.metafour.multitenancy.demo.webapp", "com.metafour.multitenancy.config" })
 public class MutitenantDemoAppImtiazApplication {
 
 	public static void main(String[] args) {

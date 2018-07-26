@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.scheduling;
 
 // https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/errors.html
 public enum SendGridStatus {

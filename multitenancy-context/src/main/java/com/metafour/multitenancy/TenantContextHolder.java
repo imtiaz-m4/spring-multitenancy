@@ -9,10 +9,10 @@ import java.util.Objects;
 
 /**
  * Context holder for each tenant in application context. <br>
+ * Note: designed like Spring RequestContextHolder (org.springframework.web.context.request.RequestContextHolder).
  * 
  * @author Imtiaz Rahi
  * @since 2017-08-28
- * @see org.springframework.web.context.request.RequestContextHolder
  */
 public class TenantContextHolder {
 	/** Scope identifier for tenant scope: "tenant". */
@@ -27,7 +27,7 @@ public class TenantContextHolder {
 	/**
 	 * Set tenant context with tenant id.
 	 * 
-	 * @param tenant
+	 * @param tenant Tenant id
 	 */
 	public static void setCurrentTenant(Object tenant) {
 		Objects.requireNonNull(tenant, "Tenant id can not be null");

@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.5] - 2018-07-26
+### Added
+- spring-multitenant-datasource-config now provides org.yaml.snakeyaml dependency
+
+### Changed
+- revision variable is creating issue, reverted back to using constants
+- README in spring-multitenant-datasource-config now contains usage section
+- Fixed javadoc issues
+- Package namespace of demo apps modified with prefix `com.metafour.multitenancy.demo.`
+
+### Removed
+- CHANGELOG.md in multitenancy-context, use the CHANGELOG.md in parent project
+- Not needed MultitenantDatasourceAutoConfigure in spring-multitenant-datasource-config
+
 ## [0.1.3] - 2018-07-25
 ### Added
 - TenantLookupFailureException in multitenancy-context for future use

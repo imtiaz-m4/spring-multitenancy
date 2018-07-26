@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.scheduling;
 
 import static org.junit.Assert.*;
 

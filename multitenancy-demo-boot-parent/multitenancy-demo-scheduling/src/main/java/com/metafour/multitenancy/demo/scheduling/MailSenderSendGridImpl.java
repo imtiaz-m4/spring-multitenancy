@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.scheduling;
 
 import java.io.IOException;
 

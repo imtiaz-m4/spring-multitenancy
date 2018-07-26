@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.scheduling;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

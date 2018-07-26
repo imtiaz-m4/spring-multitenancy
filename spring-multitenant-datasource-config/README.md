@@ -1,5 +1,15 @@
 # spring-multitenant-datasource-config (Configure databases for multitenant Spring application)
 
+
+## Usage
+Add the `com.metafour.multitenancy.config` package namespace in Spring component scanning like shown below.
+
+### Spring boot application entry point
+@SpringBootApplication(scanBasePackages = { "yourapp.package", "com.metafour.multitenancy.config" })
+
+### Spring configuration class
+@ComponentScan(basePackages = { "yourapp.namespace", "com.metafour.multitenancy.config" })
+
 ## Implementation Details
 Configures target data sources in Spring _AbstractRoutingDataSource_ for database routing.
 

@@ -1,10 +1,10 @@
-package com.metafour.multitenancy.config;
+package com.metafour.multitenancy.demo.webapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.metafour.multitenancy.impl.MultiTenancyInterceptor;
+import com.metafour.multitenancy.demo.webapp.impl.MultiTenancyInterceptor;
 
 /**
  * Configure Spring web MVC and register HTTP request interceptor to extract tenant id from HTTP URL path.

@@ -13,6 +13,11 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.21</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
@@ -39,12 +44,18 @@
 			<version>${spring-boot.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.21</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<parent>
 		<groupId>com.metafour</groupId>
 		<artifactId>spring-multitenancy</artifactId>
-		<version>${revision}</version>
+		<version>0.1.5-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 </project>

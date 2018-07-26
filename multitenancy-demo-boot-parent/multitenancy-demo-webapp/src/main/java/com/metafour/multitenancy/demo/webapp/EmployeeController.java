@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.webapp;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.metafour.multitenancy.bean.Employee;
-import com.metafour.multitenancy.bean.EmployeeRepository;
+import com.metafour.multitenancy.demo.webapp.bean.Employee;
+import com.metafour.multitenancy.demo.webapp.bean.EmployeeRepository;
 
 /**
  * Spring controller to handle employee list, add calls.

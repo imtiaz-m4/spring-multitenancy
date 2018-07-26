@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.webapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

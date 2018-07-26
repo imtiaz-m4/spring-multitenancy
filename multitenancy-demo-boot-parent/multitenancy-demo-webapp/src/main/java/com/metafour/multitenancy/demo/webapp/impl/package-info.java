@@ -11,4 +11,4 @@
  * @author Imtiaz Rahi
  * @since 2017-08-28
  */
-package com.metafour.multitenancy.impl;
+package com.metafour.multitenancy.demo.webapp.impl;

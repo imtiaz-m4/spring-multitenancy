@@ -1,4 +1,4 @@
-package com.metafour.multitenancy;
+package com.metafour.multitenancy.demo.webapp;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.metafour.multitenancy.config.MultitenancyProperties;
+import com.metafour.multitenancy.demo.webapp.MutitenantDemoAppImtiazApplication;
 import com.metafour.multitenancy.impl.TenantProperties;
 import com.metafour.multitenancy.impl.TenantProperties.TenantDataSource;
 

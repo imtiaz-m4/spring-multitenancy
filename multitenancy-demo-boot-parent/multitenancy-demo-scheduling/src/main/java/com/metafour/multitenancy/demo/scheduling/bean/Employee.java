@@ -1,4 +1,4 @@
-package com.metafour.multitenancy.bean;
+package com.metafour.multitenancy.demo.scheduling.bean;
 
 import javax.persistence.*;
 
