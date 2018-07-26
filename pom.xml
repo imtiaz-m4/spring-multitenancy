@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.metafour</groupId>
 	<artifactId>spring-multitenancy</artifactId>
 	<!-- https://www.igorkromin.net/index.php/2017/06/16/multi-module-builds-with-maven-35-and-the-parent-child-pom-version-management -->
-	<version>0.1.5</version>
+	<version>0.1.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>spring-multitenancy</name>
@@ -27,7 +28,8 @@
 		<git.host>github.com</git.host>
 		<git.user>imtiaz-m4</git.user>
 		<github.url>https://${git.host}/${git.user}</github.url>
-		<git.scm.uri>scm:git:git://${git.host}/${git.user}</git.scm.uri>
+		<!-- either scm:git:ssh://git@github.com/user/repo.git or scm:git:git@github.com:user/repo.git -->
+		<git.scm.uri>scm:git:git@${git.host}:${git.user}</git.scm.uri>
 		<javadoc.opts>-Xdoclint:none</javadoc.opts>
 	</properties>
 
@@ -123,6 +125,16 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean</preparationGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<version>3.0.0-M2</version>
 				<executions>
@@ -137,7 +149,9 @@
 									<version>[3.5.0,)</version>
 									<message>Use of revision property requires maven 3.5.0-beta1</message>
 								</requireMavenVersion>
-								<requireJavaVersion><version>${java.version}</version></requireJavaVersion>
+								<requireJavaVersion>
+									<version>${java.version}</version>
+								</requireJavaVersion>
 							</rules>
 						</configuration>
 					</execution>
