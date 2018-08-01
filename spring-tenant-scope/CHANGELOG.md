@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.6] - 2018-08-01
+### Fixed
+- Documentation issues reported by Java 8
+
 ## [0.1.0] - 2017-09-25
 ### Added
 - Define @TenantScope annotation and it's behavior for multitenant Spring application.

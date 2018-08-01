@@ -1,0 +1,41 @@
+tenants:
+  default:
+    name: Default tenant (placeholder)
+    active: true
+    cache-config:
+      id: cacheId
+      provider: HAZELCAST
+      disabled: true
+#      ref: only-use-when-referencing-an-id
+      config: hazelcast.xml
+      
+  tenant1:
+    name: Test tenant 1
+    active: true
+    cache-config:
+      id: tenant1-cache-provider
+      provider: REDIS 
+      disabled: false
+      host: localhost
+      port: 6379
+      url: redis://127.0.0.1:6379
+      config: redis-cache-config.yml
+
+  tenant2:
+    name: Test tenant 2
+    active: true
+    cache-config:
+      id: tenant2-cache-provider
+      provider: EHCACHE 
+      disabled: false
+      config: ehcache-config.xml
+
+  tenant3:
+    name: Test tenant 3
+    cache-config:
+      id: tenant2-cache-provider
+      provider: REDIS 
+      host: localhost
+      port: 6379
+      url: redis://127.0.0.1:6379
+      config: redis-cache-config-2.yml

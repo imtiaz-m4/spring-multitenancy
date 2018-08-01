@@ -35,7 +35,7 @@ public class TenantScopeImpl implements Scope {
 	/**
 	 * Returns data in tenant scope context.
 	 * 
-	 * @return
+	 * @return Data in tenant scope context
 	 */
 	private Map<String, Object> getScopeContext() {
 		return tenantScopeContextDataHolder.get(contextHolder.getTenant());
@@ -47,13 +47,6 @@ public class TenantScopeImpl implements Scope {
 		Map<String, Object> scope = (Map<String, Object>) resolveContextualObject(contextHolder.getTenant());
 		return scope.computeIfAbsent(name, k -> objectFactory.getObject());
 	}
-
-//	@Override
-//	public Object get(String name, ObjectFactory<?> objectFactory) {
-//		String tenant = contextHolder.getTenant(); // TODO use static or instance of TenantContextHolder
-//		Map<String, Object> scope = tenantScopeContextDataHolder.computeIfAbsent(tenant, k -> new ConcurrentHashMap<>());
-//		return scope.computeIfAbsent(name, k -> objectFactory.getObject());
-//	}
 
 	@Override
 	public Object remove(String name) {
