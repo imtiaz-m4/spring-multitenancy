@@ -1,13 +1,16 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+All notable changes to multitenant demonstration projects will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [0.1.6] - 2018-08-01
+### Added
+- new maven module multitenancy-demo-caching
+- Embedded Redis server used for local testing
+- Maven wrapper setup for demo projects
 
-## [Unreleased]
-Unrelease changes are tracked here.
+### Removed
+- Maven wrapper files from multitenancy-demo-scheduling
 
-## [0.2.0] - 2017-08-31
+## [0.1.4] - 2017-08-31
 ### Added
 - Multitenant data source switching using AbstractRoutingDataSource
 - Multiple tenant configuration details + datasource are read from property file and auto populated into bean
@@ -39,12 +42,3 @@ Unrelease changes are tracked here.
 - JPA with Spring data repository model
 - 3x PostgreSQL database
 - Lombok annotations
-
-
-## [version] - 2017-06-20
-### Added [new features]
-### Changed [changes in existing functionality]
-### Deprecated [soon-to-be removed features]
-### Removed [removed features]
-### Fixed [bug fixes]
-### Security [vulnerabilities]

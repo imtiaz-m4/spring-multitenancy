@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.6] - 2018-08-01
+### Added
+- Logging with SLF4J
+
 ## [0.1.0] - 2017-09-26
 ### Added
 - Multiple datasource configuration read from property, YAML file

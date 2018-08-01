@@ -15,6 +15,8 @@ import org.springframework.context.annotation.Configuration;
 import com.metafour.multitenancy.impl.TenantProperties;
 import com.metafour.multitenancy.impl.TenantProperties.TenantDataSource;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Inject multiple JDBC data sources as Spring beans into IOC. <br>
  * Database configurations are taken from {@code multitenant.properties} file and structured using
@@ -36,18 +38,21 @@ import com.metafour.multitenancy.impl.TenantProperties.TenantDataSource;
  */
 @Configuration
 @ComponentScan("com.metafour.multitenancy.config")
+@Slf4j
 public class DataSourceConfig {
 	private static final String DEFAULT_TENANT_KEY = "default";
 	@Autowired private MultitenancyProperties props;
 
 	@Bean
 	public DataSource dataSource() {
+		if (log.isTraceEnabled()) log.trace("Configuring database connections provided for the tenants");
 		MultitenantRoutedDataSource mrds = new MultitenantRoutedDataSource();
 
 		Map<Object, Object> targetDS = new HashMap<>();
 		for (Entry<String, TenantProperties> ent : props.tenants.entrySet()) {
 			TenantProperties ob = ent.getValue();
 			if (!ob.isActive() || ob.getDatasource() == null) continue;
+			if (log.isTraceEnabled()) log.trace("{} datasource configured", ob.getName() == null ? ent.getKey() : ob.getName());
 			targetDS.put(ent.getKey(), buildDS(ob.getDatasource()));
 		}
 
@@ -58,11 +63,10 @@ public class DataSourceConfig {
 	}
 
 	private DataSource buildDS(TenantDataSource dsprop) {
-		DataSourceBuilder factory = DataSourceBuilder.create()
+		return DataSourceBuilder.create()
 				.driverClassName(dsprop.getDriverClassName())
 				.username(dsprop.getUsername())
 				.password(dsprop.getPassword())
-				.url(dsprop.getUrl());
-		return factory.build();
+				.url(dsprop.getUrl()).build();
 	}
 }
