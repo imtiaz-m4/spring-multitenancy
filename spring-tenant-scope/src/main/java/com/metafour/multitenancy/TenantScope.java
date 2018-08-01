@@ -18,9 +18,9 @@ import org.springframework.core.annotation.AliasFor;
  * 
  * @author Imtiaz Rahi
  * @since 2017-09-15
- * @see org.springframework.web.context.annotation.RequestScope
- * @see org.springframework.web.context.annotation.SessionScope
- * @see org.springframework.web.context.annotation.ApplicationScope
+ * @see <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/annotation/RequestScope.html">org.springframework.web.context.annotation.RequestScope</a>
+ * @see <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/annotation/SessionScope.html">org.springframework.web.context.annotation.SessionScope</a>
+ * @see <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/context/annotation/ApplicationScope.html">org.springframework.web.context.annotation.ApplicationScope</a>
  */
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
@@ -28,10 +28,7 @@ import org.springframework.core.annotation.AliasFor;
 @Scope(TenantContextHolder.SCOPE_TENANT)
 public @interface TenantScope {
 
-	/**
-	 * Alias for {@link Scope#proxyMode}.
-	 * <p> Defaults to {@link ScopedProxyMode#TARGET_CLASS}.
-	 */
+	/* Alias for {@link Scope#proxyMode}. Defaults to {@link ScopedProxyMode#TARGET_CLASS}. */
 	@AliasFor(annotation = Scope.class)
 	ScopedProxyMode proxyMode() default ScopedProxyMode.TARGET_CLASS;
 

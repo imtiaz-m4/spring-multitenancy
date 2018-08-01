@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.6] - 2018-08-01
+### Added
+- new feature (maven module) spring-multitenant-caching-config multitenancy-demo-caching
+
+### Changed
+- Documentation fixes
+
 ## [0.1.5] - 2018-07-26
 ### Added
 - spring-multitenant-datasource-config now provides org.yaml.snakeyaml dependency
