@@ -5,7 +5,7 @@
 	<groupId>com.metafour</groupId>
 	<artifactId>spring-multitenancy</artifactId>
 	<!-- https://www.igorkromin.net/index.php/2017/06/16/multi-module-builds-with-maven-35-and-the-parent-child-pom-version-management -->
-	<version>0.1.6</version>
+	<version>0.1.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>spring-multitenancy</name>
@@ -28,7 +28,7 @@
 		<git.host>github.com</git.host>
 		<git.user>imtiaz-m4</git.user>
 		<github.url>https://${git.host}/${git.user}</github.url>
-		<!-- either scm:git:ssh://git@github.com/user/repo.git or scm:git:git@github.com:user/repo.git -->
+		<!-- either scm:git:ssh://git@github.com/user/repo.git or scm:git:git@github.com:user/repo.git or scm:git:https://github.com/user/repo.git -->
 		<git.scm.uri>scm:git:git@${git.host}:${git.user}</git.scm.uri>
 		<javadoc.opts>-Xdoclint:none</javadoc.opts>
 	</properties>
@@ -143,10 +143,11 @@
 					<skip>${skipDeploy}</skip>
 				</configuration>
 			</plugin>
+			<!-- http://www.baeldung.com/maven-release-nexus -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
+				<version>2.4.2</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
