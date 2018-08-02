@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.metafour</groupId>
 	<artifactId>multitenancy-demo-boot-parent</artifactId>
-	<version>0.1.7-SNAPSHOT</version>
+	<version>0.1.7</version>
 	<packaging>pom</packaging>
 
 	<name>multitenancy-demo-boot-parent</name>
@@ -93,7 +93,8 @@
 		<developerConnection>${git.scm.uri}/spring-multitenancy.git/${project.artifactId}</developerConnection>
 		<connection>${git.scm.uri}/spring-multitenancy.git/${project.artifactId}</connection>
 		<url>${github.url}/spring-multitenancy/multitenancy-demo-boot-parent</url>
-	</scm>
+	  <tag>v0.1.7</tag>
+  </scm>
 	<issueManagement>
 		<system>Github Issues</system>
 		<url>${github.url}/spring-multitenancy/issues</url>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.metafour</groupId>
 	<artifactId>spring-multitenancy</artifactId>
 	<!-- https://www.igorkromin.net/index.php/2017/06/16/multi-module-builds-with-maven-35-and-the-parent-child-pom-version-management -->
-	<version>0.1.7-SNAPSHOT</version>
+	<version>0.1.7</version>
 	<packaging>pom</packaging>
 
 	<name>spring-multitenancy</name>
@@ -203,7 +202,8 @@
 		<developerConnection>${git.scm.uri}/spring-multitenancy.git</developerConnection>
 		<connection>${git.scm.uri}/spring-multitenancy.git</connection>
 		<url>${github.url}/spring-multitenancy</url>
-	</scm>
+	  <tag>v0.1.7</tag>
+  </scm>
 	<issueManagement>
 		<system>Github Issues</system>
 		<url>${github.url}/spring-multitenancy/issues</url>
