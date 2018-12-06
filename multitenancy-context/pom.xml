@@ -6,18 +6,10 @@
 	<name>multitenancy-context</name>
 	<description>Context setup for multi-tenant application environment</description>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
 	<parent>
 		<groupId>com.metafour</groupId>
 		<artifactId>spring-multitenancy</artifactId>
-		<version>0.1.6</version>
+		<version>0.1.9-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 </project>

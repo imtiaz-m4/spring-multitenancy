@@ -1,14 +1,18 @@
 package com.metafour.multitenancy;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.*;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.metafour.multitenancy.impl.TenantScopeImpl;
 import com.metafour.multitenancy.scan.Address;
@@ -23,26 +27,25 @@ import com.metafour.multitenancy.scan.IAddress;
  * @see org.springframework.web.context.request.RequestScopeTests
  * @see org.springframework.web.context.request.RequestScopedProxyTests
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith({ SpringExtension.class })
 @ContextConfiguration(classes = { TenantScopeTestConfiguration.class })
 public class TenantScopeBeanFactoryTest {
-	@Autowired
-	private DefaultListableBeanFactory beanFactory;
+	@Autowired private DefaultListableBeanFactory beanFactory;
 
-	@BeforeClass
+	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
 	}
 
-	@AfterClass
+	@AfterAll
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		this.beanFactory.registerScope(TenantContextHolder.SCOPE_TENANT, TenantScopeImpl.newInstance());
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		TenantContextHolder.clearCurrentTenant();
 	}
@@ -177,16 +180,4 @@ public class TenantScopeBeanFactoryTest {
 		assertEquals("scopedproxy-" + tenant, ((TestBean) beanFactory.getBean("scopedTarget." + name)).getName());
 	}
 
-	@Ignore("Does not work - IR")
-	@Test
-	public void circleLeadsToException() throws Exception {
-		// for (String it : beanFactory.getBeanDefinitionNames()) System.out.println(it);
-		// try {
-		this.beanFactory.getBean("requestScopedObjectCircle1");
-		fail("Should have thrown BeanCreationException");
-		// }
-		// catch (BeanCreationException ex) {
-		// assertTrue(ex.contains(BeanCurrentlyInCreationException.class));
-		// }
-	}
 }

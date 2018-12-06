@@ -1,14 +1,14 @@
 package com.metafour.multitenancy;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.metafour.multitenancy.config.TenantScopeConfig;
 import com.metafour.multitenancy.scan.Address;
@@ -20,12 +20,12 @@ import com.metafour.multitenancy.scan.Address;
  * @see org.springframework.web.context.request.RequestScopeTests
  * @see org.springframework.web.context.request.RequestScopedProxyTests
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith({ SpringExtension.class })
 @ContextConfiguration(classes = { TenantScopeConfig.class, TenantScopeTestConfiguration.class })
 public class TenantScopeAppCtxTest {
-	@Autowired ApplicationContext applicationContext;
+	@Autowired private ApplicationContext applicationContext;
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		TenantContextHolder.clearCurrentTenant();
 	}

@@ -1,10 +1,10 @@
 package com.metafour.multitenancy;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.expression.StandardBeanExpressionResolver;
@@ -22,8 +22,8 @@ import com.metafour.multitenancy.impl.TenantScopeImpl;
 public class TenantScopeXmlBeanDefTest {
 	private final DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 		this.beanFactory.registerScope(TenantContextHolder.SCOPE_TENANT, TenantScopeImpl.newInstance());
 		this.beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver());
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this.beanFactory);
@@ -31,8 +31,8 @@ public class TenantScopeXmlBeanDefTest {
 		this.beanFactory.preInstantiateSingletons();
 	}
 
-	@After
-	public void tearDown() throws Exception {
+	@AfterEach
+	public void tearDown() {
 		TenantContextHolder.clearCurrentTenant();
 	}
 

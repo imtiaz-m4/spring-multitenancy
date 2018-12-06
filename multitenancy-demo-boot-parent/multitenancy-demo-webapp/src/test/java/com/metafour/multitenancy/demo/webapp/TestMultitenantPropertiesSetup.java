@@ -5,18 +5,17 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.metafour.multitenancy.config.MultitenancyProperties;
-import com.metafour.multitenancy.demo.webapp.MutitenantDemoAppImtiazApplication;
 import com.metafour.multitenancy.impl.TenantProperties;
 import com.metafour.multitenancy.impl.TenantProperties.TenantDataSource;
 
-@RunWith(SpringRunner.class)
+@ExtendWith({ SpringExtension.class })
 @ContextConfiguration(classes = { MutitenantDemoAppImtiazApplication.class })
 public class TestMultitenantPropertiesSetup {
 

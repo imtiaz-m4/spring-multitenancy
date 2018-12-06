@@ -22,6 +22,9 @@ public class ScheduledTasks {
 	private static final DateTimeFormatter FormatDateTime = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 	private static final DateTimeFormatter FormatTime = DateTimeFormatter.ISO_LOCAL_TIME;
 
+	@Value("${schedulingdemo.email.addresslist}")
+	private String[] sendEmailTo;
+
 	@Value("${tenants.active.name}")
 	private String[] activeTenants;
 
@@ -61,17 +64,20 @@ public class ScheduledTasks {
 		System.out.println("[" + tenant + "] Thread id: " + t.getId() + "; name: " + t.getName());
 		String data = "";
 		/* Read employee data from tenant DB */
-		for (Employee it: repo.findAll())
+		for (Employee it: repo.findAll()) {
 			data += it.toString() + "\n\n";
+		}
+		//StreamSupport.stream(repo.findAll().spliterator(), false).map(it -> it.toString()).collect(Collectors.joining("\n\n"));
 
 		System.out.println(tenant + ": sending email");
 		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setFrom("imtiaz.rahi@gmail.com"); // TODO change sender, read tenant props
-		msg.setTo("imtiaz.rahi+development@metafour.com");
+		msg.setFrom(props.getTenants().get(tenant).getSenderEmail());
+		msg.setTo(sendEmailTo);
 		msg.setSubject("[" + tenant + "] Testing SendGrid Email sending Java API " + LocalDateTime.now().format(FormatDateTime));
 		String mailbody = "Email send using SendGrid email API by " + tenant + "."
-							+ "\n\n Sender: " + props.getTenants().get(tenant).getSenderEmail()
-							+ "\n\n" + data
+							+ "\n\n Sender: " + msg.getFrom()
+							+ "\n\n"
+							+ data
 							+ "\n Cheers // Imtiaz Rahi";
 		msg.setText(mailbody);
 		mailer.send(msg);

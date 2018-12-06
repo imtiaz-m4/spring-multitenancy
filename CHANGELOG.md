@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 Un-released changes are tracked here.
 
+## [0.1.9] - 2018-12-06
+### Added
+- new dependency added JUnit5
+
+### Changed
+- Spring boot 2.x compatibility
+- Upgrade to Junit 5
+
+### Removed
+- Junit 4 dependency removed
+
 ## [0.1.6] - 2018-08-01
 ### Added
 - new feature (maven module) spring-multitenant-caching-config multitenancy-demo-caching

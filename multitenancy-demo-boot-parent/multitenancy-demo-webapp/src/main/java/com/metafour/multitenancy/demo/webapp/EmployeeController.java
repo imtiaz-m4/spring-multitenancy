@@ -43,7 +43,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/get/{empid}", method = RequestMethod.GET)
 	public String getEmployee(@PathVariable String tenantid, @PathVariable Long empid, Model model) {
-		model.addAttribute("employee", employeeRepository.findOne(empid));
+		model.addAttribute("employee", employeeRepository.findById(empid).orElse(null));
 		model.addAttribute("employees", employeeRepository.findAll());
 		return "employees";
 	}
