@@ -12,6 +12,7 @@ Un-released changes are tracked here.
 - new dependency added JUnit5
 
 ### Changed
+- Spring 5 has deprecated WebMvcConfigurerAdapter, so removed it and used WebMvcConfigurer
 - Spring boot 2.x compatibility
 - Upgrade to Junit 5
 

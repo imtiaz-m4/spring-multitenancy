@@ -2,7 +2,7 @@ package com.metafour.multitenancy.demo.webapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.metafour.multitenancy.demo.webapp.impl.MultiTenancyInterceptor;
 
@@ -13,7 +13,7 @@ import com.metafour.multitenancy.demo.webapp.impl.MultiTenancyInterceptor;
  * @since 2017-08-25
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
